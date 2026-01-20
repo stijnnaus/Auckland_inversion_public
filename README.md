@@ -1,4 +1,4 @@
-# Auckland_inversion_public
+# Short description code base
 This is a code base developed to perform atmospheric transport model inversions over Auckland, New Zealand for CO2 emission estimation. The inverse system combines transport model footprints with flux priors and atmospheric observations of CO2 at four sites in Auckland to create optimized flux estimates for biospheric and anthropogenic CO2 fluxes. This code base has been used to prepare a manuscipt on synthetic data inversions for Auckland.
 
 Important parts of the code are:

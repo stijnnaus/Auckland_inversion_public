@@ -1,0 +1,212 @@
+afternoon_hours:
+- 12
+- 13
+- 14
+- 15
+- 16
+- 17
+basegrid_label: baseNZCSM_v1
+date_end: 2022-03-10 00:00:00
+date_start: 2022-03-01 00:00:00
+domains:
+- Mah0p3_in
+- Mah0p3_out
+- In1p5
+- Out7p0
+domains_NAME:
+  In1p5: In1p5
+  Mah0p3_in: Mah0p3
+  Mah0p3_out: Mah0p3
+  Out7p0: Out7p0
+inner_bounds:
+  In1p5:
+    lat: &id003
+    - -37.25
+    - -36.3
+    lon: &id004
+    - 174.2
+    - 175.1
+  Mah0p3_in: null
+  Mah0p3_out:
+    lat: &id001
+    - -37.1
+    - -36.72
+    lon: &id002
+    - 174.54
+    - 174.98
+  Out7p0:
+    lat:
+    - -38.90679
+    - -34.79321
+    lon:
+    - 172.19164
+    - 177.30836
+inversion_is_osse: true
+inversion_label: baseNZCSM_base
+name_run: baseNZCSM
+nstepNAME: 25
+nx_base:
+  In1p5: 24
+  Mah0p3_in: 36
+  Mah0p3_out: 36
+  Out7p0: 12
+nx_inv:
+  In1p5: 2
+  Mah0p3_in: 9
+  Mah0p3_out: 4
+  Out7p0: 1
+ny_base:
+  In1p5: 24
+  Mah0p3_in: 36
+  Mah0p3_out: 48
+  Out7p0: 12
+ny_inv:
+  In1p5: 2
+  Mah0p3_in: 9
+  Mah0p3_out: 4
+  Out7p0: 1
+obs_errors:
+- correlation_length: 0.001
+  error_type: absolute
+  error_value: 0.5
+- correlation_length: 3.0
+  error_type: sim_enh
+  error_value: 0.3
+- correlation_length: 0.001
+  error_type: model_data_mismatch
+  error_value: 0.3
+obs_filter_hours:
+- 12
+- 13
+- 14
+- 15
+- 16
+- 17
+obs_filter_winddir_windows:
+  NE:
+    MKH:
+    - 0
+    - 90
+    skytower_nw:
+    - 0
+    - 90
+  SW:
+    MKH:
+    - 200
+    - 320
+    skytower_se:
+    - 200
+    - 300
+obs_filters:
+- windspeed
+- winddirection
+obs_gradients:
+  NE:
+  - - AUT
+    - MKH
+  - - NWO
+    - MKH
+  - - TKA
+    - MKH
+  SW:
+  - - AUT
+    - MKH
+  - - NWO
+    - MKH
+  - - TKA
+    - MKH
+obs_method: gradient
+opt_freq_diurnal: 3
+opt_freq_longterm: daily
+osse_create_obs_method: from_file
+osse_truth_label: baseAKLNWP_truth2
+outer_bounds:
+  In1p5: null
+  Mah0p3_in:
+    lat: *id001
+    lon: *id002
+  Mah0p3_out:
+    lat: *id003
+    lon: *id004
+  Out7p0: null
+prior_error_labels:
+  BiomeBGC: 1
+  EDGARv8: 0
+  MahuikaAuckland: 0
+  UrbanVPRM: 1
+prior_errors:
+  BiomeBGC:
+    L_spatial: 20000.0
+    L_temp_diurnal: 3
+    L_temp_long: 7
+    min_abs_error: 0.0
+    rel_error: 1.0
+    scale_to_total: false
+  EDGARv8:
+    L_spatial: 20000.0
+    L_temp_diurnal: 3
+    L_temp_long: 7
+    min_abs_error: 0
+    rel_error: 1.0
+    scale_to_total: false
+  MahuikaAuckland:
+    L_spatial: 20000.0
+    L_temp_diurnal: 3
+    L_temp_long: 7
+    min_abs_error: 0
+    rel_error: 1.0
+    scale_to_total: false
+  UrbanVPRM:
+    L_spatial: 20000.0
+    L_temp_diurnal: 3
+    L_temp_long: 7
+    min_abs_error: 0.0
+    rel_error: 1.0
+    scale_to_total: false
+priors_fixed: {}
+priors_to_opt:
+  In1p5:
+  - EDGARv8
+  - BiomeBGC
+  Mah0p3_in:
+  - MahuikaAuckland
+  - UrbanVPRM
+  Mah0p3_out:
+  - MahuikaAuckland
+  - UrbanVPRM
+  Out7p0:
+  - EDGARv8
+  - BiomeBGC
+samplelayer: 40m
+scale_err_to_GPP_Resp:
+  BiomeBGC:
+    GPP: 0.5
+    Re: 1.0
+  UrbanVPRM:
+    GPP: 0.5
+    Re: 1.0
+scale_priors:
+  MahuikaAuckland: 1.1
+  MahuikaAuckland_new_t: 0.124
+  MahuikaAuckland_new_x: 4.78
+  UrbanVPRM_new_t: 8.064516129032258
+  UrbanVPRM_new_x: 0.20920502092050208
+scale_unc_to_total:
+  BiomeBGC: false
+  EDGARv8: false
+  MahuikaAuckland: false
+  UrbanVPRM: false
+separate_weekend_error:
+  0:
+    corr: 0.0
+    flag: true
+sites:
+- MKH
+- AUT
+- NWO
+- TKA
+winddata_fill_method: no_obs_only_model
+windspeed_limits:
+  mangere: 3
+  mkh: 3
+yaml_filename: /home/nauss/Code/Auckland_inversion/config/inversion_setups/baseNZCSM_base.yml
